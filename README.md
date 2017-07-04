@@ -284,23 +284,35 @@ set([3, 2, 3, 1, 5]) == (1, 2, 3, 5)
 
 ### Functions, Files, Yield and Lambda
 
-#### Our Application:  PyStudentManager
-
-- Student Details
-
-- Easy to expand
-
-- From console to web application
-
 #### Functions
 
-##### Examples
+##### Built In Functions Examples
 
 ```python
 print("Hello World")
 str(3) == "3"
 int("15") == 15
 username = input("Enter the user's name: ")
+```
+
+#### Function Arguments
+
+```python
+def add_student(student_id,  name):
+    students = []
+    student = {"student_id": student_id, "name": name}
+    students.append(student)
+    
+    
+add_student(student_id=1, name="Kevin")  # named arguments    
+
+
+def variable_arguments(name, *args):  # variable number of parameters
+    print(args)
+
+    
+def keyword_variable_arguments(name, **kwargs):  # variable number of parameters with keywords
+    print(kwargs["parameter1"], kwargs["parameter2"])     
 ```
 
 
