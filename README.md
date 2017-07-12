@@ -315,6 +315,66 @@ def keyword_variable_arguments(name, **kwargs):  # variable number of parameters
     print(kwargs["parameter1"], kwargs["parameter2"])     
 ```
 
+#### Lambda Functions
 
+```python
+# standard function
+def double1(x):
+    return x * 2
+
+# lambda equivalent
+double2 = lambda x: x * 2
+
+# call either function in the same way:
+result1 = double1(2)
+
+result2 = double2(2)
+```
+
+#### Classes
+
+In general, classes are OO constructs similar to other OO languages.
+
+There are some Python specific details:
+
+* Class names should be capitalized while function and attribute names should be lowercase
+* No access modifiers for classes or their functions
+* `__init__` works an a constructor-like method in Python
+    * Not the use of the `self` keyword in the parameter list - think of it as `self.`
+    * example: `self.student_name` creates a instance attribute in the Student class for storing a student's name
+* `__str__` allows the return of a string representation of the object
+* `__repr__`?
+* Classes can contain class (static) attributes as well as instance attributes
+    * example:  school_name below is a class (static) attribute of the Student class
+* No interfaces
+* By convention, naming a function with an underscore is an indication that it is "private" and shouldn't be overridden
+* No override keyword; you can simply override a function in a derived class by using the same name
+* Inheritance is achieved by passing the class within the parenthesis of the new class
+    * Example:  `class DerivedFoo(Foo):` would indicate a new class DerivedFoo inheriting from class Foo
+* Multiple inheritance is allowed
+    * The `super()`keyword is used to access the functions and properties of the class being derived from
+
+```python
+class Student:
+
+    school_name = "Springfield Elementary"
+
+    def __init__(self, student_id, student_name):
+        self.student_id = student_id
+        self.student_name = student_name
+        students.append(self)
+
+    #string representation of the object
+    #what about __repr__?
+    def __str__(self):
+        return "Student: " + self.student_name
+
+    def get_name_capitalize(self):
+        return self.student_name.capitalize()
+
+    def get_school_name(self):
+        return self.school_name
+```
+#### Modules
 
 
